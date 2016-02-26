@@ -421,6 +421,14 @@ v-update-web-templates]
         post_command 'v-list-mail-account-autoreply', opts || {}, account, domain, mail_account
       end
 
+      # v-list-mail-domains USER [FORMAT]
+      def list_mail_domains(options={})
+        opts = options.clone
+        account = opts.delete(:account) || @default_account
+        post_command 'v-list-mail-domains', opts || {}, account
+      end
+
+
       private
 
       def valid_command_name?(command)
